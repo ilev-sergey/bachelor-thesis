@@ -1,8 +1,8 @@
-\chapter{Сегнетоэлектрические материалы}\label{ch:ch3}
-
+\chapter{Структурные дефекты, возникающие при нанесении верхнего электрода}\label{ch:ch3}
+\todo{Выбор платины в качестве верхнего электрода обоснован её химической инертностью, исключающей возможность окисления при контакте с HfO\(_2\)}
 \section{Моделирование процесса напыления}\label{sec:ch3/sec2}
 % Для бла-бла было произведено моделирование 
-Для моделирования взаимодействия налетающих частиц платины с HZO были произведены квантовомеханические расчёты столкновений на основе метода Монте-Карло с помощью пакета Stopping and Range of Ions in Matter (SRIM) \cite{zieglerSRIMStoppingRange2010}. Оценка энергии налетаемых частиц была получена с помощью расчёта кинетической энергии атомов при лазерной абляции \cite{mutaevVLIYaNIEVERHNEYGRANICY2020}:
+Для моделирования взаимодействия налетающих частиц платины с HZO были произведены квантовомеханические расчёты столкновений на основе метода Монте-Карло с помощью пакета Stopping and Range of Ions in Matter (SRIM) \cite{zieglerSRIMStoppingRange2010}. Использовалась плотность HZO, выращенного в PEALD (plasma-enhanced atomic layer deposition) процессе при температуре подложки \SI{280}{\degreeCelsius}, равная \SI{6.75}{\gram\per\cm\cubed} \cite{kimEffectProcessTemperature2022}. Оценка энергии налетаемых частиц была получена с помощью расчёта кинетической энергии атомов при лазерной абляции \cite{mutaevVLIYaNIEVERHNEYGRANICY2020}:
 \todo{добавить интуиции к формулке}
 \[\bar{E} = 9.92 \cdot 10^{4} A^{1/8} \tau^{1/4} Z^{3/4} (Z+1)^{3/8} (I\lambda)^{1/2}k_b,\] где \(A\) -- атомная масса распыляемого элемента, \(\tau\) -- длительность импульса, \(Z\) -- средний заряд ионов, вылетающих при абляции, \(I\) -- интенсивность лазерного излучения в \si{\watt}/\si{\cm}\(^2\), \(\lambda\) -- длина волны лазера, \(k_b\) -- постоянная Больцмана.
 
@@ -52,7 +52,7 @@
 
 \section{Встроенные поля}
 
-Различная концентрация кислородных вакансий в плёнке HZO до циклирования приводит к образованию встроенных (built-in) электрических полей \(E_\text{bi}\) и пиннингу доменов \todo{ref}. При приложении внешнего электрического поля \(E_\text{ext}\), эффективное поле \(E_\text{eff}\) в СЭ слое складывается из суммы полей: \(E_\text{eff} = E_\text{bi} + E_\text{ext}\). Таким образом, приводя к сдвигу и асимметрии ВАХ относительно нулевого напряжения. В случае наличия противоположно направленных встроенных полей в образце, происходит расщепление пер
+Различная концентрация кислородных вакансий в плёнке HZO до циклирования приводит к образованию встроенных (built-in) электрических полей \(E_\text{bi}\) \cite{pesicImpactChargeTrapping2016} и пиннингу доменов \todo{ref}. При приложении внешнего электрического поля \(E_\text{ext}\), эффективное поле \(E_\text{eff}\) в СЭ слое складывается из суммы полей: \(\boldsymbol{E_\text{eff}} = \boldsymbol{E_\text{bi}} + \boldsymbol{E_\text{ext}}\). Таким образом, приводя к сдвигу и асимметрии ВАХ относительно нулевого напряжения. В случае наличия противоположно направленных встроенных полей в образце, происходит расщепление пиков переполяризационного тока на вольт-амперных характеристиках \cite{schenkElectricFieldCycling2014}.
 
 Встроенные поля приводят к расщеплению пиков переполяризационного тока на вольт-амперных характеристиках (ВАХ) за счёт
 
@@ -63,7 +63,7 @@
 
 Флексоэлектрическим эффектом называется возникновение поляризации в диэлектрике при его изгибе. Электрическое поле, созданное за счёт наличия градиента механических напряжений, может быть оценено по формуле \cite{gruvermanMechanicalStressEffect2003}
 
-\[E_\text{эфф}=\frac{f}{\varepsilon\varepsilon_0}\frac{\partial u}{\partial z} = \frac{e}{4\pi\varepsilon_0 a}\frac{\partial u}{\partial z},\]
+\[E_\text{eff}=\frac{f}{\varepsilon\varepsilon_0}\frac{\partial u}{\partial z} = \frac{e}{4\pi\varepsilon_0 a}\frac{\partial u}{\partial z},\]
 где \(f\) -- флексоэлектрический коэффициент, \(\epsilon\) -- диэлектрическая проницаемость, \(\epsilon_0\) -- диэлектрическая постоянная, \(\frac{\partial u}{\partial z}\) -- градиент механических напряжений, \(e\) -- заряд электрона, \(a\) -- постоянная решётки.
 
 Градиент концентрации частиц платины в плёнке HZO \(\frac{\partial n}{\partial z}\) вызывает градиент механических напряжений \(\frac{\partial u}{\partial z}\approx\frac{u_{max}}{\Delta z}\), где \(u_\text{max}\) -- максимальное механическое напряжение, возникающее на глубине с максимальной концентрацией частиц платины, а \(\Delta z\) -- ширина распределения.
@@ -72,6 +72,8 @@
 \[u_\text{max}= E_{bi}\frac{4\pi\varepsilon_0 a}{e}\Delta z\]
 
 Полученные значения механических напряжений (табл. \ref{tab:stress}) имеют характерные величины, соответствующие экспериментальным значениям, при которых были получены сегнетоэлектрические свойства в оксиде-гафния \todo{процитировать что-нибудь, мб ga-doped поискать напряжения, либо ещё в какой-то статье было (в PZT PFM Были вроде, но всё таки HfO2 поискать)}
+
+
 
 \begin{table} [htbp]
     \centering
@@ -82,10 +84,10 @@
             \hline
             \centering \(\bar{E}\), \si{\electronvolt} & \centering \(E_{bi}\), \si{\volt} & \centering \(\sigma\), \si{\angstrom} & \centering \(u_\text{max}\), \% & \centering \(\frac{\partial u}{\partial z}\), \si{\meter}\(^{-1}\cdot 10^7\) & \\
             \hline
-            \centering 151  eV                         & \centering 1.5                    & \centering  3                         & \centering  0.51                & \centering 3.4                                                               & \\
-            \centering 121  eV                         & \centering1.7                     & \centering  3                         & \centering  0.58                & \centering 3.9                                                               & \\
-            \centering 97   eV                         & \centering 2.0                    & \centering  2                         & \centering  0.45                & \centering 4.5                                                               & \\
-            \centering 68   eV                         & \centering 2.3                    & \centering  2                         & \centering  0.52                & \centering 5.2                                                               & \\
+            \centering 151                             & \centering 1.5                    & \centering  3                         & \centering  0.51                & \centering 3.4                                                               & \\
+            \centering 121                             & \centering1.7                     & \centering  3                         & \centering  0.58                & \centering 3.9                                                               & \\
+            \centering 97                              & \centering 2.0                    & \centering  2                         & \centering  0.45                & \centering 4.5                                                               & \\
+            \centering 68                              & \centering 2.3                    & \centering  2                         & \centering  0.52                & \centering 5.2                                                               & \\
             \hline
             \hline
         \end{tabular}
@@ -93,7 +95,7 @@
 \end{table}
 
 \nomenclature{FEM}{finite element method, метод конечных элементов}
-\nomenclature{HZO}{Hf0.5Zr0.5O2, оксид гафния-циркония}
+\nomenclature{HZO}{Hf\(_{0.5}\)Zr\(_{0.5}\)O\(_2\), оксид гафния-циркония}
 \nomenclature{АСО}{атомно-слоевое осаждение}
 \nomenclature{АСМ}{атомно-силовая микроскопия}
 \nomenclature{PUND}{positive up negative down, электрофизический метод измерения остаточной поляризации}
